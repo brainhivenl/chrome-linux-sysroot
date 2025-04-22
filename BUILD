@@ -7,8 +7,6 @@
     for arch in [
         "arm64",
         "amd64",
-        "armhf",
-        "i386",
         "mips64el",
         "mipsel",
     ]

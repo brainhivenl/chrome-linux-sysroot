@@ -1,6 +1,6 @@
 """Build setup for chrome-linux-sysroot"""
 
-module(name = "chrome-linux-sysroot", version = "0.0.2")
+module(name = "chrome-linux-sysroot", version = "0.0.3")
 
 _BUILD_FILE = """
 filegroup(
@@ -12,14 +12,12 @@ filegroup(
 )
 """
 
-# Based on https://github.com/chromium/chromium/blob/082a46c99411023b97fae0476b526b54ff98aa3d/build/DEPS
+# Based on https://github.com/bazelbuild/rules_rust/tree/f21e47995a0297cc522d52449a1b0e774b414bc5/examples/cross_compile
 SYSROOTS = {
-    "arm64": "2f915d821eec27515c0c6d21b69898e23762908d8d7ccc1aa2a8f5f25e8b7e18",
-    "amd64": "36a164623d03f525e3dfb783a5e9b8a00e98e1ddd2b5cff4e449bd016dd27e50",
-    "armhf": "47b3a0b161ca011b2b33d4fc1ef6ef269b8208a0b7e4c900700c345acdfd1814",
-    "i386": "63f0e5128b84f7b0421956a4a40affa472be8da0e58caf27e9acbc84072daee7",
-    "mips64el": "58f8594905bfe0fa0b7c7a7e882f01725455d07b7161e6539de5169867009b9f",
-    "mipsel": "2098b42d9698f5c8a15683abbf6d424b7f56200bd2488198e15f31554acb391f",
+    "arm64": "d303cf3faf7804c9dd24c9b6b167d0345d41d7fe4bfb7d34add3ab342f6a236c",
+    "amd64": "5df5be9357b425cdd70d92d4697d07e7d55d7a923f037c22dc80a78e85842d2c",
+    "mips64el": "ee94d723b36d1e643820fe7ee2a8f45b3664b4c5d3c3379ebab39e474a2c9f86",
+    "mipsel": "cc3202718a58541488e79b0333ce936a32227e07228f6b3c122d99ee45f83270",
 }
 
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
